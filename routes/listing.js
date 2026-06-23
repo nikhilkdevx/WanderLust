@@ -28,18 +28,38 @@ router.get("/new", (req,res)=>{
 });
 
 // Create Route
-router.post("/",validateListing ,wrapAsync(async (req,res,next)=>{
-        const newListing = new Listing(req.body.listing);
-        await newListing.save();
-        res.redirect("/listings"); 
-    })
-);
+router.post("/", validateListing, wrapAsync(async(req,res,next)=>{
+    const newListing = new Listing(req.body.listing);
+
+    if(req.body.listing.image){
+        newListing.image = {
+            url: req.body.listing.image,
+            filename: "listingimage"
+        };
+    } else {
+        newListing.image = {
+            filename: "listingimage",
+            url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+        };
+    }
+
+    console.log("Image =", req.body);
+    await newListing.save();
+    console.log(newListing);
+
+    req.flash("success","New Listing Created!");
+    res.redirect("/listings");
+}));
 
 
 // Show Route for One Specific View
 router.get("/:id",wrapAsync( async (req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id).populate("reviews");
+    if(!listing){
+      req.flash("error","Lisitng you requested does not exist!");  
+      return res.redirect("/listings");
+    }
     res.render("listings/show",{listing});
 
 })
@@ -49,6 +69,10 @@ router.get("/:id",wrapAsync( async (req,res)=>{
 router.get("/:id/edit",wrapAsync(async (req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id);
+    if(!listing){
+      req.flash("error","Lisitng you requested does not exist!");  
+      return res.redirect("/listings"); 
+    }
     res.render("listings/edit",{listing});
 })
 ); 
@@ -56,7 +80,12 @@ router.get("/:id/edit",wrapAsync(async (req,res)=>{
 // Update Route 
 router.put("/:id",validateListing, wrapAsync(async (req,res)=>{
     let {id} = req.params;
+    req.body.listing.image = {
+        url : req.body.listing.image,
+        filename : "listingimage"
+    };
     await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    req.flash("success","Listing Updated!");
     res.redirect(`/listings/${id}`);
 })
 );
@@ -65,6 +94,7 @@ router.put("/:id",validateListing, wrapAsync(async (req,res)=>{
 router.delete("/:id/delete",wrapAsync(async(req,res)=>{
     let {id} = req.params;
     await Listing.findByIdAndDelete(id);
+    req.flash("success","Listing Deleted!");
     res.redirect("/listings");
 })
 );
