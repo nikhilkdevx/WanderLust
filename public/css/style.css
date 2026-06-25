@@ -7,8 +7,9 @@ body{
 }
 
 .container{
-    flex :1;
+    flex:1;  
 }
+
 
 .navbar{
     height: 5rem ;
