@@ -74,6 +74,8 @@ https://github.com/nikhildevx/WanderLust
 
 ### 📱 Responsive Design
 <img width="416" height="907" alt="Screenshot (2033)" src="https://github.com/user-attachments/assets/bc96f559-144f-4a37-8fd6-7e2c863a93e9" />
+
+<br>
 <br>
 
 ## Tech Stack
@@ -189,6 +191,7 @@ Wanderlust/
 ├── app.js
 └── package.json
 ```
+<br>
 
 ## Future Improvements
 
