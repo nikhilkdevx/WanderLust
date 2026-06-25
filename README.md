@@ -1,7 +1,3 @@
-### ⭐ If you found this project interesting, consider giving it a star.
-
-<br>
-
 # 🏡 Wanderlust
 
 A full-stack Airbnb-inspired property booking platform built using the MERN backend ecosystem with secure authentication, image uploads, interactive maps, reviews, and role-based authorization.
@@ -243,7 +239,9 @@ nkdevx.tech@gmail.com
 Portfolio Link
 ( Coming Soon )
 
+<br>
 
+### ⭐ If you found this project interesting, consider giving it a star.
 
 
 
