@@ -16,7 +16,7 @@ https://wanderlust-97aa.onrender.com/listings
 
 📂 Source Code
 
-https://github.com/nikhildevx/WanderLust
+https://github.com/nikhilkdevx/WanderLust.git
 
 ## Features
 
