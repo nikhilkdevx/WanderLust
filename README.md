@@ -184,19 +184,16 @@ CLOUD_API_SECRET=
 
 ## Folder Structure
 
-controllers/
+📦 Wanderlust
 
-models/
-
-routes/
-
-views/
-
-public/
-
-middleware.js
-
-app.js
+├── controllers
+├── models
+├── routes
+├── views
+├── public
+├── middleware.js
+├── cloudConfig.js
+└── app.js
 
 <br>
 
