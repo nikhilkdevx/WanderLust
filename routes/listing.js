@@ -8,7 +8,6 @@ const multer = require("multer");
 const { storage } = require("../cloudConfig");
 const upload = multer({ storage })
 
-router.get("/wanderlust-97aa.onrender.com",wrapAsync(listingController.index))
 router.route("/")
 .get(wrapAsync(listingController.index))
 .post(isLoggedIn, validateListing,upload.single('listing[image]'), wrapAsync(listingController.createListing))
