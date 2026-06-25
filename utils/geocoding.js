@@ -4,7 +4,7 @@ async function getCoordinates(location, country) {
   const query = `${location}, ${country}`;
 
   const response = await axios.get(
-    process.env.GEOCODING,
+    "https://nominatim.openstreetmap.org/search",
     {
       params: {
         q: query,

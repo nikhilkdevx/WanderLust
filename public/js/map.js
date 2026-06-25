@@ -1,6 +1,6 @@
 const map = new maplibregl.Map({
     container: "map",
-    style: process.env.MAP,
+    style: "https://tiles.openfreemap.org/styles/liberty",
     center: coordinates,
     zoom: 9.5,
 });
