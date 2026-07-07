@@ -1,5 +1,6 @@
 const Listing = require("../models/listing");
 const getCoordinates = require("../utils/geocoding");
+const User = require("../models/user");
 
 module.exports.index = async (req,res)=>{
     const allListings = await Listing.find({});
