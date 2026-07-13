@@ -14,9 +14,9 @@ main()
 });
 
 async function main(){
-    // console.log(process.env.ATLASDB_URL);
-//    await mongoose.connect(process.env.ATLASDB_URL); 
-   await mongoose.connect('mongodb://127.0.0.1:27017/Wanderlust'); 
+    console.log(process.env.ATLASDB_URL);
+   await mongoose.connect(process.env.ATLASDB_URL); 
+//    await mongoose.connect('mongodb://127.0.0.1:27017/Wanderlust'); 
 }
 
 function sleep(ms) {
@@ -30,7 +30,7 @@ const initDB = async() =>{
     }));
     for (let listing of initData.data) {
 
-    // console.log("Geocoding:", listing.location);
+    console.log("Geocoding:", listing.location);
 
     const coords = await getCoordinates(
         listing.location,

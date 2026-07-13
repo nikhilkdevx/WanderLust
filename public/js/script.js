@@ -17,3 +17,20 @@
     }, false)
   })
 })()
+
+  let btn = document.querySelectorAll(".light-dark");
+  let body = document.querySelector("body");
+  let icon = document.querySelectorAll(".light-dark i");
+
+  btn.forEach(btn=>{
+    
+    btn.addEventListener("click",()=>{
+    body.classList.toggle("light");
+    icon.forEach(icon=>{
+      icon.classList.toggle("fa-sun");
+      icon.classList.toggle("fa-moon");
+    });
+    
+  });
+});
+  

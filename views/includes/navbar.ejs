@@ -23,33 +23,51 @@
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
+
     <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
+
+    <div class="d-flex gap-3">
+
+        <button class="light-dark nav-link border-0 bg-transparent d-md-none">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
         </div>
 
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" aria-label="Search"/>
-          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-        </form>
-      </div>
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" aria-label="Search"/>
+            <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+        </div>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
-        <% if(!currUser){ %>
-          <a class="nav-link"  href="/signup"><b>Sign up</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>  
-        <% } %>
-        <% if(currUser){ %>
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
-        <% } %>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          <% if(!currUser){ %>
+            <a class="nav-link"  href="/signup">Sign up</a>
+            <a class="nav-link" href="/login">Log in</a>  
+          <% } %>
+          <% if(currUser){ %>
+            <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <% } %>
+          <button class="light-dark nav-link border-0 bg-transparent d-none d-md-block">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        </div>
+
       </div>
       
-    </div>
+        
+      
   </div>
+    
+  
 </nav>
+
