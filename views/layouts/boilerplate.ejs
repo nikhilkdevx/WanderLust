@@ -14,7 +14,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link href="/css/rating.css" rel="stylesheet">
         <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
-        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+        <script type="module">
+            import * as maplibregl from "https://unpkg.com/maplibre-gl@6.6.0/dist/maplibre-gl.mjs";
+            window.maplibregl = maplibregl;
+        </script>
     </head>
     <body>
     <%- include("../includes/navbar.ejs") %>

@@ -1,3 +1,4 @@
+
 <% layout("/layouts/boilerplate") %>
 
 <div class="row">
@@ -89,7 +90,7 @@
     <div id="map"></div>
     
 </div>
-<script>const coordinates =  <%-JSON.stringify(listing.geometry.coordinates) %> </script>
+<script> window.coordinates = <%- JSON.stringify(listing.geometry.coordinates) %></script>
 
-<script src="/js/map.js"></script>
+<script type = "module" src="/js/map.js"></script>
 

@@ -3,7 +3,19 @@ const getCoordinates = require("../utils/geocoding");
 const User = require("../models/user");
 
 module.exports.index = async (req,res)=>{
-    const allListings = await Listing.find({});
+    let allListings;
+    if(req.query.search){
+        allListings = await Listing.find({
+        location: { $regex: req.query.search, $options: "i" }
+        });
+    } else if (req.query.category){
+        allListings = await Listing.find({
+            category : {$regex : req.query.category, $options : "i"}
+        });
+    } else {
+        allListings = await Listing.find({});
+    }
+    
     res.render("listings/index",{ allListings });
 };
 

@@ -14,9 +14,9 @@ main()
 });
 
 async function main(){
-    console.log(process.env.ATLASDB_URL);
    await mongoose.connect(process.env.ATLASDB_URL); 
-//    await mongoose.connect('mongodb://127.0.0.1:27017/Wanderlust'); 
+//    await mongoose.connect('mongodb://127.0.0.1:27017/Wanderlust');
+    
 }
 
 function sleep(ms) {
@@ -26,7 +26,7 @@ function sleep(ms) {
 const initDB = async() =>{
     await Listing.deleteMany({});
     initData.data = initData.data.map((obj) => ({...obj, 
-    owner : "6a3a46900d44242a79e0893c"
+    owner : "6a3c51668dfa1c54691233fb"
     }));
     for (let listing of initData.data) {
 

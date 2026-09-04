@@ -30,6 +30,9 @@ const listingSchema = new Schema({
     country : {
         type : String,
     },
+    category : {
+        type : String,
+    },
     reviews : [
      {
         type : Schema.Types.ObjectId,
