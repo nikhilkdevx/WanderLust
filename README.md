@@ -42,6 +42,8 @@ https://github.com/nikhilkdevx/WanderLust.git
 
 ✔ Responsive UI
 
+✔ Dark and light theme
+
 ✔ MVC Architecture
 
 ✔ MongoDB Database
@@ -51,6 +53,7 @@ https://github.com/nikhilkdevx/WanderLust.git
 ✔ Error Handling
 
 ✔ Deployment on Render
+
 
 <br>
 
