@@ -197,8 +197,6 @@ Wanderlust/
 
 Upcoming Features
 
-• Categorizing by Icons and Search
-
 • Booking System
 
 • Payment Gateway
